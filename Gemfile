@@ -70,3 +70,6 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem 'kuby-core', '0.18.0'
+gem 'kuby-digitalocean', '0.4.3'

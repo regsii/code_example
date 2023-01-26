@@ -1,0 +1,51 @@
+name: 'Deploy to prod'
+
+on:
+  push:
+    branches:
+      - develop
+      # - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+
+      - name: Pull down the latest docker image
+        run: |
+          docker pull ruby:3.2.0 --quiet
+          docker pull node:19.5.0 --quiet
+          docker pull nginx:1.22.1-alpine --quiet
+
+      - name: Set Rails Master Key
+        run: |
+          echo ${{ secrets.RAILS_MASTER_KEY }} > config/master.key
+
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          gem update bundler
+          bundle install --without development --jobs 4 --retry 3
+
+      - name: Build latest
+        run: |
+          bundle exec kuby -e production build
+
+      - name: Push to Github Container Registry
+        run: |
+          bundle exec kuby -e production push
+
+      - name: Deploy to Production
+        run: |
+          bundle exec kuby -e production deploy
+
+      - name: Clean Up
+        run: |
+          docker image prune -f
+          docker volume prune -f
