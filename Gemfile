@@ -73,3 +73,5 @@ end
 
 gem 'kuby-core', '0.18.0'
 gem 'kuby-digitalocean', '0.4.3'
+
+gem 'google-api-client'
