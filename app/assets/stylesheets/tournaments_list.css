@@ -1,0 +1,15 @@
+.tournaments-list__item {
+  font-size: 34px;
+  line-height: 65px;
+  padding-left: 25px;
+  text-decoration: none;
+}
+
+.tournaments-list__item-link {
+  color: white;
+  text-decoration: none; 
+}
+
+.tournaments-list__item:not(:last-child) {
+  border-bottom: 1px solid #939393;
+}

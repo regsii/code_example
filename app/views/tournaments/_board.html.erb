@@ -1,0 +1,12 @@
+<div class='board'>
+  <div class='board__header'>
+    <%= image_tag("wsop.png", alt: "wsop", class: "board__logo board__logo_img") %>
+
+    <span class='board__header-text'>
+      <%= head_text %>
+    </span>
+  </div>
+  <div class='board__content'>
+    <%= yield %>
+  </div>
+</div>

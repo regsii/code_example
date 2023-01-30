@@ -1,0 +1,58 @@
+.board {
+  margin: 0 auto;
+  width: 1028px;
+  background-color: #333;
+  position: relative;
+  align-self: center;
+}
+
+.board__header {
+  background: linear-gradient(90deg, #C7C8C7, #F8F9F9);
+  height: 110px;
+}
+
+.board__header-text {
+  line-height: 110px;
+  vertical-align: top;
+  font-weight: 700;
+  font-size: 64px;
+  text-transform: uppercase;
+}
+
+.board__logo {
+  height: 63px;
+  margin: 23px 10px 23px 23px;
+}
+
+.board-table {
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.board-table__row {
+  line-height: 60px;  
+}
+
+.board-table__row:not(:last-child) td {
+  border-bottom: 1px solid #939393;
+}
+
+.board-table__cell:nth-child(1) {
+  width: 150px;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.board-table__cell:nth-child(2) {
+  width: 600px;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.board-table__cell:nth-child(3) {
+  text-align: center;
+}
+
+.board-table__cell-suffix {
+  font-size: 26px;
+}

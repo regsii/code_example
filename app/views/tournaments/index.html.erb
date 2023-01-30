@@ -1,0 +1,9 @@
+<%= render(layout: 'board', locals: { head_text: 'Tournaments' }) do %>
+  <div class="tournaments-list">
+    <% @tournaments.each do |tournament| %>
+      <div class="tournaments-list__item">
+        <%= link_to tournament.name, tournament_path(tournament), class: "tournaments-list__item-link" %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

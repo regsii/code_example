@@ -1,0 +1,33 @@
+<%= render(layout: 'board', locals: { head_text: short_tournament_name(@tournament.name) }) do %>
+  <div class='leaderboard'>
+    <div class='leaderboard__content'>
+
+      <table class='board-table'>
+        <% @leaders.each do |leader| %>
+          <tr class='board-table__row'>
+            <td class='board-table__cell'>
+              <%= leader.place %><span class='board-table__cell-suffix'>
+                <%= leader.place.ordinalize[/\D+/] %>
+              </span>
+            </td>
+            <td class='board-table__cell'>
+              <%= leader.user.name %>
+            </td>
+            <td class='board-table__cell'>
+              <%= cents_to_money_str(leader.prize_cents) %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+
+    </div>
+
+    <div class='leaderboard__summary'>
+      <%= tournament_summary(@tournament) %>
+    </div>
+
+    <div class='leaderboard__footer'>
+      <%= link_to image_tag("close.png", alt: "home", class: "leaderboard__close"), root_path %>
+    </div>
+  </div>
+<% end %>

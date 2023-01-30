@@ -1,0 +1,13 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.app-content {
+  background-image: url("page_background.png");
+  width: 1920px;
+  height: 1080px;
+  margin: 0 auto;
+  font-family: 'TT Norms Pro';
+  display: flex;
+}

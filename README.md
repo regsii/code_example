@@ -23,7 +23,9 @@ Things you may want to cover:
 
 * ...
 
+## This app is available at:
 
+https://railstest.serhii.avdieiev.com/
 
 # Development
 

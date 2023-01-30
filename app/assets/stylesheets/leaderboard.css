@@ -1,0 +1,26 @@
+.leaderboard__content {
+  background-color: #333;
+  color: white;
+  font-size: 34px;
+}
+
+.leaderboard__summary {
+  height: 44px;
+  background: linear-gradient(90deg, #C7C8C7, #F8F9F9);
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 44px;
+}
+
+.leaderboard__footer {
+  height: 143px;
+  background-image: url("footer_panel.png");
+  background-size: 1028px 143px;
+  text-align: center;
+}
+
+.leaderboard__close {
+  height: 143px;
+}
